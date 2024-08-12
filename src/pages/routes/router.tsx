@@ -3,6 +3,7 @@ import { DashboardPage } from "./private/dashboard";
 import { SignInPage } from "./auth/sign-in";
 import { PrivateLayout } from "../layouts/private";
 import { AuthLayout } from "../layouts/auth";
+import { SignUpPage } from "./auth/sign-up";
 
 export const router = createBrowserRouter([
 
@@ -17,7 +18,8 @@ export const router = createBrowserRouter([
     path: '/', 
     element: <AuthLayout />, 
     children: [
-      { path: '/sign-in', element: <SignInPage /> }
+      { path: '/sign-in', element: <SignInPage /> },
+      { path: '/sign-up', element: <SignUpPage /> }
     ]
   }
 ])
