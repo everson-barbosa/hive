@@ -4,6 +4,7 @@ import { Label } from "@/components/ui/label"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { Helmet } from "react-helmet-async"
 import { useForm } from "react-hook-form"
+import { toast } from "sonner"
 import { z } from "zod"
 
 const signInSchema = z.object({
@@ -23,11 +24,19 @@ export function SignInPage() {
     mode: 'onChange'
   })
 
-  const handleSignRequest = async (data: SignInSchema) => {
+  const handleSignIn = async (data: SignInSchema) => {
     await new Promise(resolve => setTimeout(resolve, 3000))
 
+    toast.success('Enviamos um e-mail para o seu', {
+      action: {
+        label: 'Reenviar',
+        onClick: () => { handleSignIn(data) }
+      }
+    })
+
+    console.info({ data })
+
     reset()
-    console.log(data)
   }
 
 
@@ -45,7 +54,7 @@ export function SignInPage() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(handleSignRequest)} className="space-y-4">
+          <form onSubmit={handleSubmit(handleSignIn)} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="email">Seu e-mail</Label>
               <Input 
