@@ -9,7 +9,8 @@ import { toast } from "sonner"
 import { z } from "zod"
 
 const signInSchema = z.object({
-  email: z.string().email()
+  email: z.string().email(),
+  password: z.string()
 })
 
 type SignInSchema = z.infer<typeof signInSchema>
@@ -69,6 +70,15 @@ export function SignInPage() {
                 type="email" 
                 placeholder="example@email.com" 
                 {...register('email')}
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="password">Sua senha</Label>
+              <Input 
+                id="password" 
+                type="password" 
+                {...register('password')}
               />
             </div>
 
