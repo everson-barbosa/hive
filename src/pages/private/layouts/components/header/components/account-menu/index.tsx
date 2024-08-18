@@ -5,7 +5,7 @@ import { Building, ChevronDown, LogOut } from "lucide-react";
 export function AccountMenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
         <Button variant='outline' className="flex select-none items-center gap-2">
           Gerenciar conta
           <ChevronDown className="h-4 w-4" />
