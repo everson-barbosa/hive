@@ -11,11 +11,11 @@ interface ArticlesTableProps {
 
 export function ArticlesTable({ articles }: ArticlesTableProps) {
   return (
-    <div className="max-w-full overflow-x-auto">
-      <Table className="border-separate border-spacing-y-2 w-full min-w-[600px]">
+    <div className="max-w-full overflow-x-auto rounded border">
+      <Table className="w-full min-w-[600px]">
         <TableHeader>
           <TableRow className="">
-            <TableHead className="w-10" />
+            <TableHead className="w-12" />
             <TableHead className="w-60">Título</TableHead>
             <TableHead align="center" className="w-10">Autor</TableHead>
             <TableHead align="center" className="w-40 text-center">Categorias</TableHead>
@@ -27,19 +27,19 @@ export function ArticlesTable({ articles }: ArticlesTableProps) {
         <TableBody>
           {
             articles.map(article => (
-              <TableRow key={article.id} className="bg-background hover:bg-background">
-                <TableCell className="py-1" align='center'>
+              <TableRow key={article.id} className="">
+                <TableCell align='center'>
                   <SearchIcon className="w-4 h-4"/>
                 </TableCell>
-                <TableCell className="py-1">
+                <TableCell>
                   <span className="text-sm truncate max-w-80">
                     {article.title}
                   </span>
                 </TableCell>
-                <TableCell className="py-1">
+                <TableCell>
                   <AuthorContent author={article.author}/>
                 </TableCell>
-                <TableCell align="center" className="py-1">
+                <TableCell align="center">
                   {article.categories.map(article => (
                     <span key={article.id}>{article.title}</span>
                   ))}
@@ -47,7 +47,7 @@ export function ArticlesTable({ articles }: ArticlesTableProps) {
                 <TableCell align="center">
                   <StatusIndicator status={article.status} />
                 </TableCell>
-                <TableCell className="py-1">
+                <TableCell>
                   <Actions status={article.status}/>
                 </TableCell>
               </TableRow>

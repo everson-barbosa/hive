@@ -15,7 +15,7 @@ const STATUS_MAPPER: Record<ArticleStatus, StatusIndicatorInfo> = {
     text: 'Criado'
   },
   published: {
-    color: 'bg-green-800',
+    color: 'bg-emerald-400',
     text: 'Publicado'
   },
   unpublished: {

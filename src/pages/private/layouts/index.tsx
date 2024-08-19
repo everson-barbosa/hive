@@ -10,7 +10,7 @@ export function PrivateLayout() {
       <div className="w-[calc(100%_-_20rem)]">
         <Header />
         <main 
-          className="p-6 bg-muted min-h-[calc(100vh_-_3.5rem)]"
+          className="p-6 min-h-[calc(100vh_-_3.5rem)]"
         >
           <Outlet />
         </main>
