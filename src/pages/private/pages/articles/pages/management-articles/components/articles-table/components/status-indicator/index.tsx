@@ -32,7 +32,7 @@ export function StatusIndicator({ status }: StatusIndicatorProps) {
   const { text, color } = STATUS_MAPPER[status]
 
   return (
-    <div className="flex flex-row items-center justify-center gap-2">
+    <div className="flex flex-row items-center justify-start gap-2">
       <div className={`h-2 w-2 rounded-full ${color}`}/>
       <span className="text-sm">
         {text}

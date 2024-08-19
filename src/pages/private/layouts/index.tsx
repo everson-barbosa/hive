@@ -1,20 +1,15 @@
-import { Outlet } from "react-router-dom";
 import { AsideMenu } from "./components/aside-menu";
-import { Header } from "./components/header";
+import { Content } from "./components/content";
+import { PrivateLayoutProvider } from "./contexts/private-layout-context";
 
 export function PrivateLayout() {
   return (
-    <div className="flex flex-row antialiased">
-      <AsideMenu />
+    <PrivateLayoutProvider storageKey="@hive:aside-menu-is-open">
+      <div className="flex flex-row antialiased">
+        <AsideMenu />
 
-      <div className="w-[calc(100%_-_20rem)]">
-        <Header />
-        <main 
-          className="p-6 min-h-[calc(100vh_-_3.5rem)]"
-        >
-          <Outlet />
-        </main>
+        <Content />
       </div>
-    </div>
+    </PrivateLayoutProvider>
   )
 }

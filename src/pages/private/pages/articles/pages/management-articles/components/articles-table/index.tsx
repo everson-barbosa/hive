@@ -44,7 +44,7 @@ export function ArticlesTable({ articles }: ArticlesTableProps) {
                     <span key={article.id}>{article.title}</span>
                   ))}
                 </TableCell>
-                <TableCell align="center">
+                <TableCell>
                   <StatusIndicator status={article.status} />
                 </TableCell>
                 <TableCell>
